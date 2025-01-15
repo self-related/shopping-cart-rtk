@@ -1,7 +1,15 @@
+import { Outlet } from 'react-router';
 import './App.css'
 
 function App() {
-  return 0;
+  return (
+    <>
+      <nav>Navbar</nav>
+      <main>
+        <Outlet />
+      </main>
+    </>
+  );
 }
 
 export default App
