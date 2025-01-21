@@ -1,3 +1,4 @@
+import { createSlice } from "@reduxjs/toolkit";
 
 interface Product {
     id: number,
@@ -18,3 +19,9 @@ const initialState: SliceState = [
         date: "2025-01-01",
     }
 ];
+
+const productSlice = createSlice({
+    name: "products",
+    initialState,
+    reducers: {},
+});
