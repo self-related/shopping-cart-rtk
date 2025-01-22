@@ -24,6 +24,7 @@ const productSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
+        // TODO: define action type
         addProduct: (state: SliceState, action) => {
             const id = state.length > 0 ? state.length + 1 : 1;
 
@@ -35,3 +36,7 @@ const productSlice = createSlice({
         },
     },
 });
+
+export const {addProduct} = productSlice.actions;
+
+export default productSlice.reducer;
