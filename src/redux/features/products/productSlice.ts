@@ -23,5 +23,15 @@ const initialState: SliceState = [
 const productSlice = createSlice({
     name: "products",
     initialState,
-    reducers: {},
+    reducers: {
+        addProduct: (state: SliceState, action) => {
+            const id = state.length > 0 ? state.length + 1 : 1;
+
+            // change the state directly cuz we can call "push" method
+            state.push({
+                id,
+                ...action.payload
+            });
+        },
+    },
 });
