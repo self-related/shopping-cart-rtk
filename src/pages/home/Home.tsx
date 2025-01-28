@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../redux/store";
+import AddProduct from "../products/AddProduct";
 import ProductCard from "../products/ProductCard";
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
                         }
                     </div>
                 </div>
-                <div>Add new product</div>
+                <AddProduct />
             </div>
         </div>
     );
