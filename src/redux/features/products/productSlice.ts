@@ -5,7 +5,8 @@ export interface Product {
     name: string,
     price?: number,
     image?: string,
-    date?: string
+    date?: string,
+    description?: string
 }
 
 type SliceState = Product[];
