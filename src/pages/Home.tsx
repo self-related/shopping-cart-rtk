@@ -1,4 +1,5 @@
 import { useAppSelector } from "../redux/store";
+import ProductCard from "./ProductCard";
 
 export default function Home() {
     const products = useAppSelector((state) => state.products);
@@ -13,7 +14,7 @@ export default function Home() {
                         {
                             products.length 
                             ? products.map((product, index) => (
-                                <div key={index}>Product {index + 1}</div>
+                                <ProductCard key={index} product={product} />
                             ))
                             : <div>No product found</div>
                         }
