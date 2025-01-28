@@ -1,5 +1,5 @@
-import { useAppSelector } from "../redux/store";
-import ProductCard from "./ProductCard";
+import { useAppSelector } from "../../redux/store";
+import ProductCard from "../products/ProductCard";
 
 export default function Home() {
     const products = useAppSelector((state) => state.products);

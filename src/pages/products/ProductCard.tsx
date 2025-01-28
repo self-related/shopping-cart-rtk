@@ -1,4 +1,4 @@
-import { Product } from "../redux/features/products/productSlice";
+import { Product } from "../../redux/features/products/productSlice";
 
 interface ProductCardProps {
     product: Product
