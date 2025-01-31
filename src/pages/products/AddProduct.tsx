@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addProduct, Product } from "../../redux/features/products/productSlice";
 
 export default function AddProduct() {
 
@@ -14,8 +16,18 @@ export default function AddProduct() {
         setState(event.currentTarget.value);
     };
 
+    const dispatch = useDispatch();
+
+    const product: Product = {
+        name,
+        date,
+        image,
+        price: Number(price)
+    }
+
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        dispatch(addProduct(product));
     };
 
     console.log({name, category, image, price, date});

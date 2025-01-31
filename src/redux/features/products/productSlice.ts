@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface Product {
-    id: number,
     name: string,
+    id?: number,
     price?: number,
     image?: string,
     date?: string,
