@@ -35,9 +35,13 @@ const productSlice = createSlice({
                 ...action.payload
             });
         },
+        removeProduct: (state: SliceState, action) => {
+            const id: number = Number(action.payload);
+            return state.filter((product) => product.id !== id);
+        },
     },
 });
 
-export const {addProduct} = productSlice.actions;
+export const {addProduct, removeProduct} = productSlice.actions;
 
 export { productSlice };
