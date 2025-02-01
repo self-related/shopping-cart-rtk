@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct, Product } from "../../redux/features/products/productSlice";
+import { Product } from "../../redux/features/products/productSlice";
 
 export default function AddProduct() {
 
@@ -27,7 +27,7 @@ export default function AddProduct() {
 
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        dispatch(addProduct(product));
+        dispatch({type: "products/addProduct", payload: product});
     };
 
     console.log({name, category, image, price, date});

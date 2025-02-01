@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Product, removeProduct } from "../../redux/features/products/productSlice";
+import { Product } from "../../redux/features/products/productSlice";
 
 interface ProductCardProps {
     product: Product
@@ -15,7 +15,7 @@ export default function ProductCard( {product}: ProductCardProps) {
     const dispatch = useDispatch()
 
     const handleRemoveProduct = () => {
-        dispatch(removeProduct(id));
+        dispatch({type: "products/removeProduct", payload: id});
     };
 
     return (

@@ -42,6 +42,7 @@ const productSlice = createSlice({
     },
 });
 
-export const {addProduct, removeProduct} = productSlice.actions;
+// 
+// export const {addProduct, removeProduct} = productSlice.actions;
 
 export { productSlice };
