@@ -15,7 +15,7 @@ export default function ProductCard( {product}: ProductCardProps) {
     const dispatch = useDispatch()
 
     const handleRemoveProduct = () => {
-        dispatch({type: "products/removeProduct", payload: id});
+        dispatch({type: "productsSlice/removeProduct", payload: id});
     };
 
     return (

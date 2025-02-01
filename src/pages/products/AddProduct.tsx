@@ -27,7 +27,7 @@ export default function AddProduct() {
 
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        dispatch({type: "products/addProduct", payload: product});
+        dispatch({type: "productsSlice/addProduct", payload: product});
     };
 
     console.log({name, category, image, price, date});

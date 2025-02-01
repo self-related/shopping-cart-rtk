@@ -22,7 +22,7 @@ const initialState: SliceState = [
 ];
 
 const productSlice = createSlice({
-    name: "products",
+    name: "productsSlice",
     initialState,
     reducers: {
         // TODO: define action type
