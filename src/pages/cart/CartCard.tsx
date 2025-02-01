@@ -37,7 +37,7 @@ export default function CartCard( {product}: ProductCardProps) {
                         ${price}
                     </p>
                     <button onClick={handleRemoveProduct} className="btn btn-primary bg-red-500 text-white hover:bg-red-700 border-none" >
-                        Remove
+                        Remove from cart
                     </button>
                 </div>
             </div>
