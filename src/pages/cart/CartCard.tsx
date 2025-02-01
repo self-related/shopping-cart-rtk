@@ -7,7 +7,7 @@ interface ProductCardProps {
 
 export default function CartCard( {product}: ProductCardProps) {
 
-    const { id, name, date, image, price, description } = product ?? null;
+    const { id, name, image, price, description } = product ?? null;
     if (product == null) {
         console.log("Not provided");
     }
