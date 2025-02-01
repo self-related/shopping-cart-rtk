@@ -18,6 +18,10 @@ export default function ProductCard( {product}: ProductCardProps) {
         dispatch({type: "productsSlice/removeProduct", payload: id});
     };
 
+    const handleAddToCart = () => {
+        dispatch({type: "cartSlice/addToCart", payload: product});
+    };
+
     return (
         <div className="card bg-base-100 w-96 shadow-xl">
             <figure>
@@ -36,8 +40,8 @@ export default function ProductCard( {product}: ProductCardProps) {
                     <p className="text-gray-200 font-semibold">
                         ${price}
                     </p>
-                    <button className="btn btn-primary bg-blue-500 text-white hover:bg-blue-700">
-                        Add
+                    <button onClick={handleAddToCart} className="btn btn-primary bg-blue-500 text-white hover:bg-blue-700">
+                        Add To Cart
                     </button>
                     <button onClick={handleRemoveProduct} className="btn btn-primary bg-red-500 text-white hover:bg-red-700 border-none" >
                         Remove
