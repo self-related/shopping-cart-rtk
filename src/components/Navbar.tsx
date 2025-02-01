@@ -1,8 +1,12 @@
-import React from "react";
 import { Link } from "react-router";
+import { useAppSelector } from "../redux/store";
+import { Product } from "../types";
 
 export default function Navbar() {
 
+    const cartProducts: Product[] = useAppSelector((storeState) => storeState.cart);
+    const cartTotalPrice: number = cartProducts.reduce((acc, product) => acc + (product.price ?? 0), 0);
+    
     return (
         <div className="bg-indigo-900 text-white">
             <div className="navbar  max-w-7xl mx-auto">
@@ -39,8 +43,8 @@ export default function Navbar() {
                             tabIndex={0}
                             className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
                             <div className="card-body">
-                                <span className="text-lg font-bold">8 Items</span>
-                                <span className="text-info">Subtotal: $999</span>
+                                <span className="text-lg font-bold">{cartProducts.length} Items</span>
+                                <span className="text-info">Subtotal: ${cartTotalPrice}</span>
                                 <div className="card-actions">
                                     <Link to="/cart">
                                         <button className="btn btn-primary btn-block">View cart</button>
