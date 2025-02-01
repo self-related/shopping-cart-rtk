@@ -12,6 +12,9 @@ export default function Navbar() {
                 <div className="flex-none space-x-4">
                     <Link to="/" className="hover:text-yellow-500">Home</Link>
                     <Link to="/products" className="hover:text-yellow-500 hidden sm:flex">Products</Link>
+
+
+                    {/* cart icon */}
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                             <div className="indicator">
@@ -30,6 +33,8 @@ export default function Navbar() {
                                 <span className="badge badge-sm indicator-item">0</span>
                             </div>
                         </div>
+
+                        {/* cart dropdown */}
                         <div
                             tabIndex={0}
                             className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
@@ -44,6 +49,8 @@ export default function Navbar() {
                             </div>
                         </div>
                     </div>
+
+                    {/* user avatar */}
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
