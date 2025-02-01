@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Product } from "../../redux/features/products/productSlice";
+import { Product } from "../../types";
 
 interface ProductCardProps {
     product: Product

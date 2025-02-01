@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Product } from "../../redux/features/products/productSlice";
+import { Product } from "../../types";
 
 export default function AddProduct() {
 

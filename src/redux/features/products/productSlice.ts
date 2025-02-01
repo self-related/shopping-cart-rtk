@@ -1,13 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface Product {
-    name: string,
-    id?: number,
-    price?: number,
-    image?: string,
-    date?: string,
-    description?: string
-}
+import { Product } from "../../../types";
 
 type SliceState = Product[];
 
