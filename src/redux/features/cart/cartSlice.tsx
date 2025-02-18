@@ -20,7 +20,19 @@ export const cartSlice = createSlice({
             }
             
         },
-        removeFromCart: (state, action) => state.filter((product) => product.id !== action.payload)
+        removeFromCart: (state, action) => {
+
+            const itemIndex = state.findIndex((product) => product.id === action.payload);
+            if (itemIndex === -1 ) {
+                return;
+            }
+
+            if (state[itemIndex].quantity > 1) {
+                state[itemIndex].quantity--;
+            } else {
+                return state.filter((product) => product.id !== action.payload);
+            }
+        }
     },
 
 });
