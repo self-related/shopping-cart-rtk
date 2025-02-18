@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux";
-import { Product } from "../../types";
+import { CartProduct, Product } from "../../types";
 
 interface ProductCardProps {
-    product: Product
+    product: Product & CartProduct
 }
 
 export default function CartCard( {product}: ProductCardProps) {
 
-    const { id, name, image, price, description } = product ?? null;
+    const { id, name, image, price, description, quantity } = product ?? null;
     if (product == null) {
         console.log("Not provided");
     }
@@ -27,14 +27,14 @@ export default function CartCard( {product}: ProductCardProps) {
             </figure>
             <div className="card-body">
                 <h2 className="card-title text-white">
-                    {name}
+                    {name} <span className="ml-1 text-red-600">{quantity > 1 ? `x${quantity}` : ""}</span>
                 </h2>
                 <p>
                     {description ?? "No description"}
                 </p>
                 <div className="card-actions justify-end items-center">
                     <p className="text-gray-200 font-semibold">
-                        ${price}
+                        ${quantity * (price ?? 0)}
                     </p>
                     <button onClick={handleRemoveProduct} className="btn btn-primary bg-red-500 text-white hover:bg-red-700 border-none" >
                         Remove from cart

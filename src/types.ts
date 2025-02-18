@@ -7,3 +7,8 @@ export interface Product {
     date?: string,
     description?: string
 }
+
+
+export interface CartProduct {
+    quantity: number,
+}

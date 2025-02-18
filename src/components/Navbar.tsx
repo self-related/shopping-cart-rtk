@@ -1,11 +1,12 @@
 import { Link } from "react-router";
 import { useAppSelector } from "../redux/store";
-import { Product } from "../types";
+import { CartProduct, Product } from "../types";
 
 export default function Navbar() {
 
-    const cartProducts: Product[] = useAppSelector((storeState) => storeState.cart);
-    const cartTotalPrice: number = cartProducts.reduce((acc, product) => acc + (product.price ?? 0), 0);
+    const cartProducts: (Product & CartProduct)[] = useAppSelector((storeState) => storeState.cart);
+    const cartTotalPrice: number = cartProducts.reduce((acc, product) => acc + ((product.price ?? 0) * product.quantity), 0);
+    const cartTotalProducts: number = cartProducts.reduce((acc, product) => acc + product.quantity, 0);
     
     return (
         <div className="bg-indigo-900 text-white">
